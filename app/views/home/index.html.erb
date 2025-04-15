@@ -1,0 +1,30 @@
+<% if user_signed_in? %>
+  <div style="text-align:right; margin-top:1rem;">
+    <%= link_to 'Change password', edit_user_registration_path, style: 'margin-right: 1.5rem; color: var(--accent-primary); font-weight: bold; text-decoration: underline; font-size: 1.1rem;' %>
+    <%= button_to 'Sign out', destroy_user_session_path, method: :delete, form: { style: 'display: inline;' }, style: 'background: none; border: none; color: var(--accent-secondary); font-weight: bold; text-decoration: underline; font-size: 1.1rem; cursor: pointer;' %>
+  </div>
+<% else %>
+  <div style="text-align:right; margin-top:1rem;">
+    <%= link_to 'Sign in', new_user_session_path, style: 'margin-right: 1.5rem; color: var(--accent-primary); font-weight: bold; text-decoration: underline; font-size: 1.1rem;' %>
+    <%= link_to 'Sign up', new_user_registration_path, style: 'color: var(--accent-secondary); font-weight: bold; text-decoration: underline; font-size: 1.1rem;' %>
+  </div>
+<% end %>
+
+<h1 style="color: var(--accent-primary); font-size: 2.5rem; font-weight: 700; letter-spacing: 1px;">Universal Web Scraper</h1>
+<p style="color: var(--text-main); max-width: 540px;">
+  Effortlessly extract, structure, and automate web data with AI-powered scraping.<br>
+  <span style="color: var(--accent-secondary);">Fast. Flexible. Secure.</span>
+</p>
+<% if user_signed_in? %>
+  <a href="#">Go to My Projects</a>
+<% else %>
+  <a href="<%= new_user_registration_path %>">Get Started Free</a>
+<% end %>
+<img src="https://assets-global.website-files.com/63f6a9d7b0b5d7e3c5b2e2e0/63f6a9d7b0b5d7f7e5b2e2e2_ai-illustration.svg" alt="AI Web Scraper" style="max-width: 340px; width: 100%;">
+
+<h2 style="color: var(--accent-primary);">AI-Assisted Setup</h2>
+<p>Describe your data needs and let our AI propose the best extraction strategy. No coding required.</p>
+<h2 style="color: var(--accent-secondary);">One-Click Scheduling</h2>
+<p>Automate recurring scrapes with a single click. Get fresh data delivered on your schedule.</p>
+<h2 style="color: var(--accent-primary);">Secure & Private</h2>
+<p>Your data and credentials are encrypted and never shared. You control your projects and access.</p>
